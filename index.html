@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para mi Pato, Daniel ❤️</title>
+    <title>Para mi Pato Estelar: Daniel ❤️</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap');
 
         body {
-            background-color: #f7f3f9; /* Fondo muy claro y suave */
-            color: #4b0082; /* Tono violeta profundo para el texto */
+            background: linear-gradient(135deg, #1a033c 0%, #0a011a 100%); /* Degradado galáctico */
+            color: #e0e0e0; /* Texto claro */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,108 +18,131 @@
             text-align: center;
             font-family: 'Montserrat', sans-serif;
             padding: 20px;
-            overflow-y: auto; /* Permite scroll si el contenido es largo */
+            overflow: hidden; 
+            position: relative;
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+        }
+
+        .stars::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background: white;
+            box-shadow: 
+                -100vw 100vh 0 0 white, -80vw 80vh 0 0 white, -60vw 60vh 0 0 white, 
+                -40vw 40vh 0 0 white, -20vw 20vh 0 0 white, 0vw 0vh 0 0 white,
+                20vw -20vh 0 0 white, 40vw -40vh 0 0 white, 60vw -60vh 0 0 white,
+                80vw -80vh 0 0 white, 100vw -100vh 0 0 white;
+            animation: moveStars 100s linear infinite;
         }
 
         .container {
-            max-width: 600px;
+            max-width: 700px;
             padding: 40px;
-            background-color: #ffffff;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(75, 0, 130, 0.2); /* Sombra suave violeta */
-            animation: fadeIn 2s ease-in-out;
+            background-color: rgba(255, 255, 255, 0.05); /* Fondo translúcido */
+            border-radius: 25px;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.8) inset; /* Brillo neón */
+            animation: neonGlow 3s infinite alternate;
+            backdrop-filter: blur(5px);
+            z-index: 10;
+            position: relative;
         }
 
         .title {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3.5em;
-            margin-bottom: 5px;
-            color: #8a2be2; /* Violeta azulado */
-            animation: slideDown 1.5s ease-out;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.2em;
+            margin-bottom: 10px;
+            color: #ff4500; /* Naranja Hot Wheels */
+            text-shadow: 0 0 15px #ff4500, 0 0 25px #ff4500;
+            animation: textPulse 2s infinite alternate;
         }
 
         .subtitle {
-            font-size: 1.2em;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3em;
             font-weight: 400;
-            margin-bottom: 25px;
-            color: #6a5acd; /* Tono medio */
-            animation: slideDown 1.8s ease-out;
+            margin-bottom: 30px;
+            color: #00ffff; /* Cian neón */
+            text-shadow: 0 0 10px #00ffff;
         }
 
         .message {
             font-size: 1.1em;
-            line-height: 1.6;
-            margin-bottom: 30px;
+            line-height: 1.7;
+            margin-bottom: 35px;
             text-align: left;
-            animation: fadeIn 2.5s ease-in-out;
+            color: #e0e0e0;
         }
 
         .signature {
-            font-family: 'Dancing Script', cursive;
-            font-size: 2.5em;
-            color: #ff69b4; /* Rosa brillante/caliente */
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5em;
+            color: #9932cc; /* Morado eléctrico */
             margin-top: 30px;
             display: block;
-            animation: pulse 3s infinite;
+            text-shadow: 0 0 10px #9932cc;
+        }
+
+        .car-icon {
+            font-size: 3.5em;
+            color: #ffd700; /* Oro/Estrella */
+            display: block;
+            margin: 20px auto 0;
+            animation: spin 5s linear infinite;
         }
 
         /* Animaciones */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        @keyframes neonGlow {
+            0% { box-shadow: 0 0 50px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.8) inset; }
+            100% { box-shadow: 0 0 60px rgba(0, 255, 255, 0.7), 0 0 25px rgba(0, 255, 255, 1) inset; }
         }
 
-        @keyframes slideDown {
-            from { transform: translateY(-30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+        @keyframes textPulse {
+            0% { text-shadow: 0 0 15px #ff4500, 0 0 25px #ff4500; }
+            100% { text-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500; }
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
-
-        /* Estrellas decorativas (puedes omitir si no te gustan) */
-        .star {
-            position: absolute;
-            font-size: 1.5em;
-            color: #ffd700;
-            opacity: 0.8;
-            animation: twinkle 3s infinite ease-in-out;
-        }
-        .star.s1 { top: 10%; left: 5%; animation-delay: 0.5s; }
-        .star.s2 { top: 25%; right: 10%; animation-delay: 1.2s; }
-        .star.s3 { bottom: 15%; left: 15%; animation-delay: 2s; }
         
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.8; }
-            50% { opacity: 0.3; }
+        @keyframes moveStars {
+            from { transform: translate(0, 0); }
+            to { transform: translate(-200vw, 200vh); }
         }
     </style>
 </head>
 <body>
-    <div class="star s1">✨</div>
-    <div class="star s2">🌟</div>
-    <div class="star s3">✨</div>
+    <div class="stars"></div>
     
     <div class="container">
-        <h1 class="title">Para mi Pato, Daniel ❤️</h1>
-        <p class="subtitle">Solo un pequeño recordatorio de cuánto te amo.</p>
+        <h1 class="title">¡Bienvenido a Nuestra Galaxia!</h1>
+        <p class="subtitle">La pista es infinita, pero nuestro destino es siempre tú.</p>
         
         <div class="message">
             <p>
-                Mi amor, desde el día en que llegaste a mi vida, todo se iluminó. Eres lo mejor que me ha pasado, mi razón para sonreír y el pilar que me sostiene. Cada momento a tu lado es un regalo, y atesoro cada recuerdo que creamos juntos.
+                Mi Pato, eres el mejor Hot Wheels de mi colección: **único, rápido y la estrella más brillante** de mi universo. Juntos, hemos acelerado a través de galaxias desconocidas, enfrentado cometas y conquistado cada curva que la vida nos ha puesto.
             </p>
             <p>
-                Cuando me miras con esos **ojos hermosos**, me pierdo en ellos. Son el reflejo de la persona increíble que eres, llenos de bondad, dulzura y un brillo único que me enamora cada día más. No hay nada que ame más que perderme en tu mirada.
+                Eres mi motor, mi impulso y mi línea de meta. **Te amo** más allá de las estrellas que podemos contar y mi amor por ti tiene la velocidad de la luz.
             </p>
             <p>
-                Quiero que sepas que mi amor por ti es inmenso y sincero. Eres mi compañero, mi confidente, mi todo. Te amo, mi Pato, con cada fibra de mi ser. Gracias por ser tú.
+                Gracias por ser mi compañero de carreras. No importa qué tan lejos viajemos, **mi corazón siempre será tu hangar**.
             </p>
         </div>
         
-        <span class="signature">Con todo mi amor, Naomy ❤️</span>
+        <span class="car-icon">🏎️💨</span>
+        <span class="signature">Con el amor de tu Naomy.</span>
     </div>
 </body>
 </html>
