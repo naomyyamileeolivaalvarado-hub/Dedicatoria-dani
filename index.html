@@ -1,1 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi Pato Estelar: Daniel ❤️</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;700&display=swap');
 
+        body {
+            background: linear-gradient(135deg, #1a033c 0%, #0a011a 100%); /* Degradado galáctico */
+            color: #e0e0e0; /* Texto claro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            padding: 20px;
+            overflow: hidden; 
+            position: relative;
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+        }
+
+        .stars::before {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background: white;
+            box-shadow: 
+                -100vw 100vh 0 0 white, -80vw 80vh 0 0 white, -60vw 60vh 0 0 white, 
+                -40vw 40vh 0 0 white, -20vw 20vh 0 0 white, 0vw 0vh 0 0 white,
+                20vw -20vh 0 0 white, 40vw -40vh 0 0 white, 60vw -60vh 0 0 white,
+                80vw -80vh 0 0 white, 100vw -100vh 0 0 white;
+            animation: moveStars 100s linear infinite;
+        }
+
+        .container {
+            max-width: 700px;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.05); /* Fondo translúcido */
+            border-radius: 25px;
+            box-shadow: 0 0 50px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.8) inset; /* Brillo neón */
+            animation: neonGlow 3s infinite alternate;
+            backdrop-filter: blur(5px);
+            z-index: 10;
+            position: relative;
+        }
+
+        .title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.2em;
+            margin-bottom: 10px;
+            color: #ff4500; /* Naranja Hot Wheels */
+            text-shadow: 0 0 15px #ff4500, 0 0 25px #ff4500;
+            animation: textPulse 2s infinite alternate;
+        }
+
+        .subtitle {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3em;
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #00ffff; /* Cian neón */
+            text-shadow: 0 0 10px #00ffff;
+        }
+
+        .message {
+            font-size: 1.1em;
+            line-height: 1.7;
+            margin-bottom: 35px;
+            text-align: left;
+            color: #e0e0e0;
+        }
+
+        .signature {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5em;
+            color: #9932cc; /* Morado eléctrico */
+            margin-top: 30px;
+            display: block;
+            text-shadow: 0 0 10px #9932cc;
+        }
+
+        .car-icon {
+            font-size: 3.5em;
+            color: #ffd700; /* Oro/Estrella */
+            display: block;
+            margin: 20px auto 0;
+            animation: spin 5s linear infinite;
+        }
+
+        /* Animaciones */
+        @keyframes neonGlow {
+            0% { box-shadow: 0 0 50px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 255, 255, 0.8) inset; }
+            100% { box-shadow: 0 0 60px rgba(0, 255, 255, 0.7), 0 0 25px rgba(0, 255, 255, 1) inset; }
+        }
+
+        @keyframes textPulse {
+            0% { text-shadow: 0 0 15px #ff4500, 0 0 25px #ff4500; }
+            100% { text-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500; }
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        @keyframes moveStars {
+            from { transform: translate(0, 0); }
+            to { transform: translate(-200vw, 200vh); }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    
+    <div class="container">
+        <h1 class="title">¡Bienvenido a Nuestra Galaxia!</h1>
+        <p class="subtitle">La pista es infinita, pero nuestro destino es siempre tú.</p>
+        
+        <div class="message">
+            <p>
+                Mi Pato, eres el mejor Hot Wheels de mi colección: **único, rápido y la estrella más brillante** de mi universo. Juntos, hemos acelerado a través de galaxias desconocidas, enfrentado cometas y conquistado cada curva que la vida nos ha puesto.
+            </p>
+            <p>
+                Eres mi motor, mi impulso y mi línea de meta. **Te amo** más allá de las estrellas que podemos contar y mi amor por ti tiene la velocidad de la luz.
+            </p>
+            <p>
+                Gracias por ser mi compañero de carreras. No importa qué tan lejos viajemos, **mi corazón siempre será tu hangar**.
+            </p>
+        </div>
+        
+        <span class="car-icon">🏎️💨</span>
+        <span class="signature">Con el amor de tu Naomy.</span>
+    </div>
+</body>
+</html>
